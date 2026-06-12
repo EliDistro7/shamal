@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #C0161C;
+    --color-primary-dark: #8B0F14;
+    --color-primary-light: #E8474C;
+    --color-accent: #B8860B;
+  }
+
+  body {
+    @apply text-[#444444] bg-[#F8F6F2] font-body;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+  }
+
+  .clip-diagonal-hero {
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+  }
+
+  .font-display {
+    font-family: var(--font-barlow-condensed), sans-serif;
+  }
+
+  .font-heading {
+    font-family: var(--font-barlow), sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-inter), sans-serif;
+  }
+}
