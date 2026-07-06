@@ -90,7 +90,14 @@ const PROJECTS: Project[] = [
 function PageHeader() {
   return (
     <section className="relative bg-surface-dark clip-diagonal-hero min-h-64 flex items-center overflow-hidden">
-      {/* Background image overlay */}
+      {/* Background image */}
+      <img
+        src="/projects/project5.jpeg"
+        alt="Construction site background"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 z-10" />
 
       {/* Decorative red bar */}

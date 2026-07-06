@@ -334,28 +334,25 @@ function ServicesOverview() {
 
 const projects = [
   {
-    image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    alt: "Steel structure framework industrial complex",
+    image: "/projects/project2.jpeg",
+    alt: "Civil engineer supervising reinforced foundation works",
     category: "CIVIL",
-    title: "Steel Structure Framework",
-    subtitle: "Industrial Complex",
+    title: "Foundation Column Tying",
+    subtitle: "Supervised Reinforcement Works",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&q=80",
-    alt: "Reinforced concrete foundation works Dar es Salaam",
+    image: "/projects/project4.jpeg",
+    alt: "Site engineer reviewing drawings with crew on site",
     category: "BUILDINGS",
-    title: "Reinforced Concrete Foundation",
-    subtitle: "Dar es Salaam",
+    title: "Rebar Inspection & Setting Out",
+    subtitle: "Foundation Quality Control",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    alt: "Road grading and earthmoving operations",
+    image: "/projects/project3.jpeg",
+    alt: "Aerial view of reinforced concrete slab construction",
     category: "ROADS",
-    title: "Road Grading Works",
-    subtitle: "Earth Levelling Operations",
+    title: "Aerial Slab Overview",
+    subtitle: "Multi-Room Residential Build",
   },
 ];
 
@@ -440,8 +437,8 @@ function AboutSection() {
             <div className="relative">
               <div className="relative h-[480px] overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=900&q=80"
-                  alt="Bridge construction project in Tanzania"
+                src="/designs/design6.jpeg"
+alt="Multi-storey contemporary residential villa render"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 42vw"

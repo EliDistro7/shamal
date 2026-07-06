@@ -87,43 +87,43 @@ const constructionServices = [
     icon: Route,
     title: "Road Construction & Maintenance",
     desc: "Full-cycle road works — design, build, and resurface. From rural feeder roads to urban arterials, we deliver durable surfaces built for Tanzania's conditions.",
-    image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=800&q=80",
-    alt: "Road construction and maintenance works",
+    image: "/projects/project5.jpeg",
+    alt: "Large-scale foundation and structural works on site",
   },
   {
     icon: Building2,
     title: "Bridge Design & Construction",
     desc: "All bridge types — beam, arch, suspension, and culverts. Our engineers handle structural design through to finished construction across rivers and valleys.",
-    image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=800&q=80",
-    alt: "Bridge design and construction project",
+    image: "/projects/project3.jpeg",
+    alt: "Aerial view of reinforced concrete slab construction",
   },
   {
     icon: Home,
     title: "Residential Building Construction",
     desc: "Homes, villas, and residential compounds built to specification. We manage the entire build — foundation to finishing — with transparent cost reporting.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-    alt: "Residential building construction",
+    image: "/designs/design6.jpeg",
+    alt: "Multi-storey contemporary residential villa render",
   },
   {
     icon: Building,
     title: "Commercial Building Construction",
     desc: "Offices, retail centres, warehouses, and high-rise developments. Built to international standards with full project management and handover documentation.",
-    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
-    alt: "Commercial building construction",
+    image: "/designs/design2.jpeg",
+    alt: "Front elevation render of residential compound with gate",
   },
   {
     icon: Wrench,
     title: "Infrastructure Rehabilitation & Expansion",
     desc: "Assess, repair, and upgrade ageing infrastructure. We extend the life of existing assets — roads, bridges, and buildings — cost-effectively and safely.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    alt: "Infrastructure rehabilitation and expansion works",
+    image: "/projects/project2.jpeg",
+    alt: "Civil engineer supervising reinforced foundation works",
   },
   {
     icon: TowerControl,
     title: "High Rise Buildings",
     desc: "Structural and finishing works for multi-storey developments. Our teams handle reinforced concrete frames, curtain walling, MEP coordination, and fit-out.",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
-    alt: "High rise building structural works",
+    image: "/designs/design5.jpeg",
+    alt: "Luxury high-end residential poolside elevation render",
   },
 ];
 
@@ -132,31 +132,33 @@ const logisticsServices = [
     icon: Truck,
     title: "Heavy Equipment Transportation",
     desc: "Safe movement of cranes, excavators, and oversized machinery across Tanzania. We handle permits, route surveys, and specialised lowbed transport.",
-    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=800&q=80",
-    alt: "Heavy equipment transportation logistics",
+    image: "/projects/project1.jpeg",
+    alt: "Reinforced slab formwork and structural works on site",
   },
   {
     icon: Package,
     title: "Supply Chain & Freight Management",
     desc: "End-to-end logistics coordination — sourcing, customs clearing, inland haulage, and last-mile delivery for construction and industrial clients.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=80",
-    alt: "Supply chain and freight management",
+    image: "/projects/project4.jpeg",
+    alt: "Site engineer reviewing drawings with crew on site",
   },
   {
     icon: Container,
     title: "Construction Material Delivery",
     desc: "Reliable bulk delivery of aggregates, steel, cement, and structural materials to site. Just-in-time scheduling keeps your project on programme.",
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80",
-    alt: "Construction material delivery and logistics",
+    image: "/designs/design4.jpeg",
+    alt: "Contemporary residence with garden and outdoor living",
   },
   {
     icon: Warehouse,
     title: "Warehousing & Storage Solutions",
     desc: "Secure, managed storage facilities for construction materials and equipment. Flexible short- and long-term arrangements with inventory management.",
-    image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&q=80",
-    alt: "Warehousing and storage solutions",
+    image: "/designs/design1.jpeg",
+    alt: "Rear elevation render of residential compound",
   },
 ];
+
+
 
 const processSteps = [
   {
@@ -191,13 +193,10 @@ const processSteps = [
 function PageHeader() {
   return (
     <section className="relative min-h-[55vh] flex items-end clip-diagonal overflow-hidden">
-      <Image
-        src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1800&q=85"
+      <img
+        src="/projects/project5.jpeg"
         alt="Construction and logistics services overview"
-        fill
-        priority
-        className="object-cover object-center"
-        sizes="100vw"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-surface-dark/75" />
 

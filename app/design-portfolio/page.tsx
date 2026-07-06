@@ -185,11 +185,20 @@ function Lightbox({
 }
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
-
 function PageHeader() {
   return (
     <section className="relative bg-surface-dark clip-diagonal-hero min-h-64 flex items-center overflow-hidden">
+      {/* Background image */}
+      <img
+        src="/designs/design3.jpeg"
+        alt="Modern villa night render"
+        className="absolute inset-0 w-full h-full object-cover object-center"
+      />
+
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/60 z-10" />
+
+      {/* Decorative red bar */}
       <div className="absolute left-0 top-0 bottom-0 w-1 bg-primary z-20" />
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 py-20">

@@ -155,13 +155,13 @@ function CompanyStory() {
           <FadeUp className="lg:col-span-5" delay={0}>
             <div className="relative">
               <div className="relative h-[520px] overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1590534247854-e97d5e3feef6?w=900&q=80"
-                  alt="Shamal construction crew working on site"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                />
+              <Image
+  src="/projects/project4.jpeg"
+  alt="Shamal construction crew working on site"
+  fill
+  className="object-cover"
+  sizes="(max-width: 1024px) 100vw, 42vw"
+/>
               </div>
               {/* Accent block bottom-right */}
               <div className="absolute -bottom-5 -right-5 w-40 h-24 bg-primary z-10" />
@@ -407,13 +407,13 @@ function TeamTeaser() {
 
           <FadeUp className="lg:col-span-5" delay={0.2}>
             <div className="relative h-80 overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80"
-                alt="Shamal engineering and construction team on site"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 42vw"
-              />
+          <Image
+  src="/projects/project2.jpeg"
+  alt="Shamal engineering and construction team on site"
+  fill
+  className="object-cover"
+  sizes="(max-width: 1024px) 100vw, 42vw"
+/>
               <div className="absolute inset-0 bg-surface-dark/30" />
               {/* Red bottom border accent */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
