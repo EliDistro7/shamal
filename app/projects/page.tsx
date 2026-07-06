@@ -30,58 +30,58 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     id: 1,
-    title: 'Steel Structure Framework',
-    subtitle: 'Industrial Complex',
+    title: 'Slab Formwork & Rebar',
+    subtitle: 'Residential Building',
     description:
-      'Large-scale industrial steel roofing and structural framework constructed to international load-bearing standards.',
-    category: 'Civil Works',
+      'Suspended slab construction with full timber formwork shoring and double-layer rebar grid. Structural columns starter bars cast in position ahead of concrete pour.',
+    category: 'Buildings',
     location: 'Dar es Salaam',
-    year: '2023',
-    image: '/images/project-steel-framework.jpg',
+    year: '2024',
+    image: '/projects/project1.jpeg',
   },
   {
     id: 2,
-    title: 'Reinforced Concrete Foundation',
-    subtitle: 'Multi-Storey Building',
+    title: 'Foundation Column Tying',
+    subtitle: 'Supervised Reinforcement Works',
     description:
-      'Deep concrete foundation works for a multi-storey building, engineered for high seismic and load tolerance.',
-    category: 'Buildings',
+      'Civil engineer on-site supervising rebar column cage assembly within an excavated foundation pit. Each tie point inspected to structural drawings before pour approval.',
+    category: 'Civil Works',
     location: 'Dar es Salaam',
-    year: '2023',
-    image: '/images/project-concrete-foundation.jpg',
+    year: '2024',
+    image: '/projects/project2.jpeg',
   },
   {
     id: 3,
-    title: 'Road Grading Works',
-    subtitle: 'Earth Levelling Operations',
+    title: 'Aerial Slab Overview',
+    subtitle: 'Multi-Room Residential Build',
     description:
-      'Precision earthmoving and grading for a new road corridor, preparing sub-grade for asphalt surfacing.',
-    category: 'Roads',
-    location: 'Coastal Region',
-    year: '2022',
-    image: '/images/project-road-grading.jpg',
+      'Drone survey of a residential slab mid-construction — partial concrete pour complete on one wing while rebar placement continues across the remaining floor plate.',
+    category: 'Buildings',
+    location: 'Dar es Salaam',
+    year: '2023',
+    image: '/projects/project3.jpeg',
   },
   {
     id: 4,
-    title: 'Road Construction',
-    subtitle: 'Excavation & Earthworks',
+    title: 'Rebar Inspection & Setting Out',
+    subtitle: 'Foundation Quality Control',
     description:
-      'Full excavation and sub-base preparation for a rural road corridor, improving rural community access.',
-    category: 'Roads',
-    location: 'Morogoro Region',
-    year: '2022',
-    image: '/images/project-excavation.jpg',
+      'Site engineer and crew verifying rebar spacing and cover dimensions against structural drawings prior to foundation casting. Every measurement checked on-site.',
+    category: 'Civil Works',
+    location: 'Dar es Salaam',
+    year: '2023',
+    image: '/projects/project4.jpeg',
   },
   {
     id: 5,
-    title: 'Aerial Road Construction',
-    subtitle: 'Earthmoving & Grading',
+    title: 'Multi-Column Foundation Pour',
+    subtitle: 'Large-Scale Residential Complex',
     description:
-      'Machine grading and earthmoving on an open road corridor, surveyed and managed from site to completion.',
-    category: 'Roads',
-    location: 'Dodoma Region',
-    year: '2021',
-    image: '/images/project-earthmoving.jpg',
+      'Full crew managing a large reinforced concrete foundation pour — DPC membrane laid, column starters cast, and formwork stripped simultaneously across the site.',
+    category: 'Buildings',
+    location: 'Dar es Salaam',
+    year: '2024',
+    image: '/projects/project5.jpeg',
   },
 ];
 
@@ -188,13 +188,11 @@ function ProjectCard({ project }: { project: Project }) {
     <article className="group bg-white border border-border flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300">
       {/* Image */}
       <div className="relative aspect-[4/3] overflow-hidden bg-surface-mid">
-        {/* Placeholder — replace with next/image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-surface-mid to-surface-dark" />
-        <div className="absolute inset-0 flex items-center justify-center opacity-20">
-          <span className="font-display text-7xl text-white uppercase tracking-widest">
-            {project.category.slice(0, 2)}
-          </span>
-        </div>
+        <img
+          src={project.image}
+          alt={`${project.title} — ${project.subtitle}`}
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
 
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
