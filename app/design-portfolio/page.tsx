@@ -3,8 +3,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { X, ChevronLeft, ChevronRight, ZoomIn, ExternalLink } from 'lucide-react';
 
-// ─── Data ────────────────────────────────────────────────────────────────────
-
 interface Render {
   id: number;
   title: string;
@@ -21,9 +19,8 @@ const RENDERS: Render[] = [
     title: 'Rear Elevation',
     subtitle: 'Residential Compound',
     type: '3D Architectural Render',
-    description:
-      'A full rear elevation render of a gated residential compound. Emphasis on clean horizontal lines, shaded overhangs, and integrated landscaping that frames the structure.',
-    image: '/images/render-rear-elevation.jpg',
+    description: 'A full rear elevation render of a gated residential compound. Emphasis on clean horizontal lines, shaded overhangs, and integrated landscaping that frames the structure.',
+    image: '/designs/design1.jpeg',
     accent: 'Residential',
   },
   {
@@ -31,9 +28,8 @@ const RENDERS: Render[] = [
     title: 'Front Elevation',
     subtitle: 'Residential Compound with Gate & Annex',
     type: '3D Architectural Render',
-    description:
-      'Front-facing perspective showcasing the main residence alongside a secondary annex unit and a feature entrance gate — designed for both security and curb presence.',
-    image: '/images/render-front-elevation.jpg',
+    description: 'Front-facing perspective showcasing the main residence alongside a secondary annex unit and a feature entrance gate — designed for both security and curb presence.',
+    image: '/designs/design2.jpeg',
     accent: 'Residential',
   },
   {
@@ -41,9 +37,8 @@ const RENDERS: Render[] = [
     title: 'Modern Villa',
     subtitle: 'Night Exterior Render',
     type: '3D Architectural Render',
-    description:
-      "Dusk-to-night exterior render illustrating dramatic facade lighting, warm interior glows, and landscaped perimeter. Demonstrates the villa's character under evening conditions.",
-    image: '/images/render-villa-night.jpg',
+    description: "Dusk-to-night exterior render illustrating dramatic facade lighting, warm interior glows, and landscaped perimeter. Demonstrates the villa's character under evening conditions.",
+    image: '/designs/design3.jpeg',
     accent: 'Villa',
   },
   {
@@ -51,9 +46,8 @@ const RENDERS: Render[] = [
     title: 'Contemporary Residence',
     subtitle: 'Garden & Fire Pit',
     type: '3D Architectural Render',
-    description:
-      'Outdoor living space render featuring a structured garden, fire pit terrace, and open-plan living zones that blur the boundary between interior and exterior.',
-    image: '/images/render-contemporary.jpg',
+    description: 'Outdoor living space render featuring a structured garden, fire pit terrace, and open-plan living zones that blur the boundary between interior and exterior.',
+    image: '/designs/design4.jpeg',
     accent: 'Contemporary',
   },
   {
@@ -61,9 +55,8 @@ const RENDERS: Render[] = [
     title: 'Luxury Home',
     subtitle: 'Poolside Elevation',
     type: '3D Architectural Render',
-    description:
-      'Poolside elevation of a high-end residential property. Infinity-edge pool, cantilevered deck, and floor-to-ceiling glazing define the visual language of this design.',
-    image: '/images/render-luxury-poolside.jpg',
+    description: 'Poolside elevation of a high-end residential property. Infinity-edge pool, cantilevered deck, and floor-to-ceiling glazing define the visual language of this design.',
+    image: '/designs/design5.jpeg',
     accent: 'Luxury',
   },
 ];
@@ -133,7 +126,6 @@ function Lightbox({
 
       {/* Image area */}
       <div className="flex-1 flex items-center justify-center relative overflow-hidden px-16 py-6">
-        {/* Prev */}
         <button
           onClick={onPrev}
           className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary z-10"
@@ -142,16 +134,15 @@ function Lightbox({
           <ChevronLeft size={20} />
         </button>
 
-        {/* Image placeholder — replace with next/image */}
-        <div className="relative w-full max-w-4xl aspect-video bg-surface-mid flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-surface-mid to-surface-dark" />
-          <span className="relative font-display text-8xl text-white/10 uppercase tracking-widest select-none">
-            {active.accent}
-          </span>
+        <div className="relative w-full max-w-4xl aspect-video bg-surface-mid overflow-hidden">
+          <img
+            src={active.image}
+            alt={`${active.title} — ${active.subtitle}`}
+            className="w-full h-full object-cover"
+          />
           <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary" />
         </div>
 
-        {/* Next */}
         <button
           onClick={onNext}
           className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:bg-white/10 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary z-10"
@@ -172,16 +163,10 @@ function Lightbox({
               {active.description}
             </p>
           </div>
-          {/* Thumbnail strip */}
           <div className="hidden lg:flex gap-2 flex-shrink-0">
             {renders.map((r, i) => (
               <button
                 key={r.id}
-                onClick={() => {
-                  // Navigate to index via parent — passed through onPrev/onNext only,
-                  // so we close and reopen. Instead, expose direct navigation:
-                  // This is handled by the parent's setLightboxIndex.
-                }}
                 className={`w-12 h-9 bg-surface-mid border-2 transition-colors duration-200 overflow-hidden flex items-center justify-center ${
                   i === activeIndex ? 'border-primary' : 'border-transparent opacity-50 hover:opacity-100'
                 }`}
@@ -272,13 +257,12 @@ function RenderCard({
       onKeyDown={(e) => e.key === 'Enter' && onOpen(index)}
       aria-label={`Open ${render.title} — ${render.subtitle}`}
     >
-      {/* Image */}
       <div className="relative aspect-video overflow-hidden bg-surface-mid mb-4">
-        {/* Placeholder — replace with next/image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-surface-mid to-surface-dark" />
-        <span className="absolute inset-0 flex items-center justify-center font-display text-6xl text-white/10 uppercase tracking-widest select-none">
-          {render.accent}
-        </span>
+        <img
+          src={render.image}
+          alt={`${render.title} — ${render.subtitle}`}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
@@ -292,10 +276,8 @@ function RenderCard({
           </div>
         </div>
 
-        {/* Red bottom bar */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
 
-        {/* Number badge */}
         <div className="absolute top-4 left-4 bg-surface-dark/80 px-2 py-1">
           <span className="font-display text-accent text-sm font-black">
             {String(index + 1).padStart(2, '0')}
@@ -303,7 +285,6 @@ function RenderCard({
         </div>
       </div>
 
-      {/* Caption */}
       <div className="flex items-start justify-between gap-4">
         <div>
           <h3 className="font-heading text-heading-2 text-surface-dark font-semibold leading-snug group-hover:text-primary transition-colors duration-200">
@@ -338,7 +319,7 @@ function CTABanner() {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row lg:flex-col gap-4 flex-shrink-0">
-            <a
+           <a 
               href="/contact"
               className="bg-primary text-white px-8 py-3 text-caption uppercase tracking-wider font-bold hover:bg-primary-dark transition-colors duration-200 text-center flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface-dark"
             >
@@ -397,13 +378,14 @@ export default function DesignPortfolioPage() {
             <RenderCard render={RENDERS[0]} index={0} onOpen={openLightbox} />
           </div>
 
-          {/* Remaining renders — 2-col then 2-col */}
+          {/* Renders 2 & 3 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {RENDERS.slice(1, 3).map((render, i) => (
               <RenderCard key={render.id} render={render} index={i + 1} onOpen={openLightbox} />
             ))}
           </div>
 
+          {/* Renders 4 & 5 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {RENDERS.slice(3).map((render, i) => (
               <RenderCard key={render.id} render={render} index={i + 3} onOpen={openLightbox} />
@@ -414,7 +396,6 @@ export default function DesignPortfolioPage() {
 
       <CTABanner />
 
-      {/* Lightbox */}
       {lightboxIndex !== null && (
         <Lightbox
           renders={RENDERS}
