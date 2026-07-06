@@ -139,7 +139,7 @@ export default function Footer() {
       <div className="bg-primary py-3">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-1">
           <p className="text-white text-xs">
-            © 2025 Shamal (T) Limited. All Rights Reserved.
+            © 2026 Shamal (T) Limited. All Rights Reserved.
           </p>
           <a
             href="https://www.shamalcotz.com"
